@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -64,7 +64,7 @@ nav ul li a:hover {
 #landing-page {
     position: relative;
     height: 38rem;
-    overflow: hidden;
+    
 }
 
 .background-image {
@@ -351,7 +351,7 @@ nav ul li a:hover {
 #contact {
     padding: 4rem 0;
     position: relative;
-    overflow: hidden; 
+    
 }
 
 #contact::before {
