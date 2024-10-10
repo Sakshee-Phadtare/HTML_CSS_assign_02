@@ -54,10 +54,14 @@ nav ul li a {
     border-radius: 5px;
     transition: background-color 0.3s;
     color: white;
+    
+
 }
 
 nav ul li a:hover {
     background-color: #555;
+    color: #e67e22;
+    border-color: 2px solid #e67e22;
 }
 
 /* Landing Page Styles */
@@ -159,6 +163,8 @@ nav ul li a:hover {
 
 .menu-category h3 {
     margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: #e67e22;
 }
 
 .menu-item {
@@ -293,11 +299,11 @@ nav ul li a:hover {
 
 .review_card {
     width: 20rem; 
-    height: 20rem; 
+    height: 18rem; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     border-radius: 8px;
     padding: 8px 20px;
-    margin: 15px; /* Add margin around cards */
+    margin: 15px; 
 }
 
 .review_profile {
@@ -333,7 +339,7 @@ nav ul li a:hover {
     line-height: 22px;
 }
 
-/* Add hover effects */
+/* Adding hover effects */
 .review_card:hover .review_profile {
     transform: translateY(-60px);
 }
@@ -346,12 +352,186 @@ nav ul li a:hover {
     margin-top: 5px;
 }
 
+/* our speciality--------- */
+.gallery {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.gallery h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.gallery h1 span {
+    color:#e67e22;
+    margin-left: 10px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #000;
+    position: relative;
+    
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item h3 {
+    position: absolute;
+    top: 40px;
+    left: 152px;
+    font-size: 24px;
+    color: #e67e22;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item p {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e67e22;
+    color: #000;
+    padding: 8px 20px;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.gallery-item:hover img {
+    opacity: 0.3;
+}
+
+.gallery-item:hover h3,
+.gallery-item:hover p,
+.gallery-item:hover .gallery-btn {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-btn {
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* our team------ */
+.team {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.team h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.team h1 span {
+    color: #e67e22;
+    margin-left: 10px;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.team-card {
+    width: 350px;
+    height: 350px;
+    perspective: 1000px; 
+}
+
+.team-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; 
+}
+
+.team-card:hover .team-card-inner {
+    transform: rotateY(180deg); 
+}
+
+.team-card-front,
+.team-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.team-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.team-card-front img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; 
+}
+
+.team-card-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #e67e22;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    transform: rotateY(180deg); 
+}
+
+.team-card-back h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.team-card-back p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
 
 /* Contact Section */
 #contact {
     padding: 4rem 0;
     position: relative;
-    
 }
 
 #contact::before {
@@ -366,43 +546,49 @@ nav ul li a:hover {
     background-position: center;
     filter: blur(2px); 
     opacity: 1;
-    z-index: 1; 
+    z-index: 1;
 }
 
-.container {
-    position: relative; 
-    z-index: 2; 
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+.contact-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-form, .contact-info {
+    width: 48%;
     background-color: rgba(0, 0, 0, 0.7); 
     padding: 2rem;
-    border-radius: 10px; 
-    z-index: 3; 
-    color: white; 
+    border-radius: 10px;
+    color: white;
 }
 
-.contact-form label {
-    margin-top: 1rem;
-    font-size: 1.1rem;
+
+.contact-form {
+    margin-right: 2%;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form h2, .contact-info h2, .contact-info h3 {
+    color: #e67e22;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
     margin-top: 0.5rem;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #bcb7b7;
+    
 }
 
 .contact-form button {
     margin-top: 1rem;
-    padding: 0.5rem;
+    padding: 0.7rem;
     background-color: #e67e22;
     color: white;
     border: none;
@@ -414,14 +600,23 @@ nav ul li a:hover {
     background-color: #d35400;
 }
 
-.contact-details {
-    margin-top: 2rem;
-    text-align: center;
+.contact-info p, .contact-info a {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
-.contact-details p {
-    margin: 0.5rem 0;
-    color: white;
+.contact-info a {
+    color: #e67e22;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-info h2, .contact-info p {
+    text-align: left;
 }
 
 /* Footer Section */
@@ -445,7 +640,8 @@ footer {
 
 .footer-links,
 .footer-contact,
-.footer-social {
+.footer-social,
+.footer-logo {
     flex: 1;
     min-width: 220px; 
     margin: 1rem;
@@ -453,11 +649,22 @@ footer {
 
 .footer-links h3,
 .footer-contact h3,
-.footer-social h3 {
+.footer-social h3,
+.footer-logo {
     margin-bottom: 1rem;
     color: #e67e22; 
 }
 
+.footer-social{
+    padding-left: 8rem;
+}
+.footer-logo-img{
+    height: 8rem;
+    width: 8rem;
+    margin-top: 2.4rem;
+    border: 2px solid #e67e22;
+    border-radius: 50% ;
+}
 .footer-links ul {
     list-style: none;
     padding: 0;
@@ -479,7 +686,7 @@ footer {
 
 .footer-social .social-icons {
     display: flex;
-    gap: 1rem; 
+    gap: 1.8rem; 
     font-size: 2rem;
 }
 
